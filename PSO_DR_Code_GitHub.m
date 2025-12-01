@@ -12,26 +12,10 @@
 clc; clear;
 
 % 3D constellation points for 16-HQAM
-points3D = [ 
-     0.0230   -0.0399   -0.0039
-     0.0168   -0.0290    0.9178
-     0.0167   -0.0290   -0.9236
-    -0.4357    0.7547    0.0771
-     0.4753   -0.8233   -0.1721
-    -0.8712    0.0187   -0.4063
-     0.8779   -0.0295    0.3812
-    -0.4311   -0.7442    0.4831
-     0.4190    0.7652    0.4623
-    -0.4294   -0.7852   -0.4356
-     0.4297    0.7654   -0.4545
-    -0.8896    0.0499    0.5164
-     0.8779   -0.0296   -0.5390
-     0.4700   -0.8140    0.7538
-    -0.4420    0.7656   -0.8425
-    -0.4422    0.7659    0.9986]; % For M = 32, 64, 128, 256, 512, 1024 see paper in section II
+points3D = M; % For M = 8, 16, 32, 64, 128, 256, 512, 1024 see paper in section II
 
 % Minimum distance target
-targetMED = 0.91654; 
+targetMED = Delta_target; 
 
 % PSO configuration
 nParticles = 30; 
@@ -116,3 +100,4 @@ function err = objFun(x, points3D, target)
     minDist = min(dists);
     err = (minDist - target)^2;
 end
+
