@@ -82,11 +82,6 @@ axis equal; grid on;
 % Complex symbol form
 sj = points2D(:,1) + 1i*points2D(:,2);
 
-% Show final points
-disp('Final 2D Constellation Points:');
-for j = 1:length(sj)
-    fprintf('s%d = %.4f + %.4fi;\n', j, real(sj(j)), imag(sj(j)));
-end
 % ---------- Objective Function ----------
 function err = objFun(x, points3D, target)
     proj = reshape(x, 3, 2);
@@ -100,4 +95,5 @@ function err = objFun(x, points3D, target)
     minDist = min(dists);
     err = (minDist - target)^2;
 end
+
 
