@@ -11,7 +11,7 @@
 
 clc; clear;
 
-% 3D constellation points for 16-HQAM
+% 3D constellation points for M-HQAM
 points3D = M; % For M = 8, 16, 32, 64, 128, 256, 512, 1024 see paper in section II
 
 % Minimum distance target
@@ -95,6 +95,7 @@ function err = objFun(x, points3D, target)
     minDist = min(dists);
     err = (minDist - target)^2;
 end
+
 
 
 
